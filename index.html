@@ -1,598 +1,1113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roteiro Família — Ago/2026</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roteiro Família — Ago/2026</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
-:root{
-  --asphalt:#14181f;
-  --asphalt-2:#1d232d;
-  --line:#2a323d;
-  --paper:#f5f2ea;
-  --sun:#ffd23f;
-  --water:#3fb6c7;
-  --water-dk:#1a6d7a;
-  --coffee:#c48a4a;
-  --sage:#6f8f5a;
-  --ink:#eae6da;
-  --muted:#98a2ad;
-  --free:#6f8f5a;
-  --paid:#c48a4a;
-}
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;background:var(--asphalt);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
-h1,h2,h3,.disp{font-family:'Oswald',Impact,sans-serif;letter-spacing:0.02em;text-transform:uppercase;}
-a{color:var(--water);}
-.wrap{max-width:720px;margin:0 auto;padding:0 16px 60px;}
+    :root {
+      --asphalt: #14181f;
+      --asphalt-2: #1d232d;
+      --line: #2a323d;
+      --paper: #f5f2ea;
+      --sun: #ffd23f;
+      --water: #3fb6c7;
+      --water-dk: #1a6d7a;
+      --coffee: #c48a4a;
+      --sage: #6f8f5a;
+      --ink: #eae6da;
+      --muted: #98a2ad;
+      --free: #6f8f5a;
+      --paid: #c48a4a;
+    }
 
-/* HERO */
-.hero{
-  position:relative;
-  background:
-    repeating-linear-gradient(180deg, transparent 0 26px, var(--sun) 26px 44px, transparent 44px 70px),
-    linear-gradient(180deg,#1a2029,#0f1319);
-  background-size: 6px 100%, 100% 100%;
-  background-position: center top, center;
-  background-repeat: repeat-y, no-repeat;
-  padding:36px 20px 28px;
-  border-bottom:4px solid var(--sun);
-  text-align:center;
-}
-.hero .eyebrow{color:var(--sun);font-size:12px;letter-spacing:0.25em;font-family:'Oswald';font-weight:600;}
-.hero h1{font-size:30px;margin:8px 0 4px;color:var(--paper);line-height:1.05;}
-.hero .route{color:var(--muted);font-size:13px;margin-top:6px;font-family:'Inter';text-transform:none;letter-spacing:0;}
-.hero .dates{display:inline-block;margin-top:14px;background:var(--asphalt-2);border:1px solid var(--line);padding:6px 14px;border-radius:100px;font-size:13px;color:var(--ink);}
+    * {
+      box-sizing: border-box;
+    }
 
-/* TABS */
-.tabbar{
-  position:sticky;top:0;z-index:50;
-  display:flex;gap:0;background:var(--asphalt);border-bottom:1px solid var(--line);
-  overflow-x:auto;
-}
-.tabbar button{
-  flex:1;min-width:110px;background:none;border:none;color:var(--muted);
-  font-family:'Oswald';font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;
-  padding:14px 8px;cursor:pointer;border-bottom:3px solid transparent;
-}
-.tabbar button.active{color:var(--ink);border-bottom-color:var(--sun);}
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--asphalt);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-.panel{display:none;padding-top:22px;}
-.panel.active{display:block;}
+    h1,
+    h2,
+    h3,
+    .disp {
+      font-family: 'Oswald', Impact, sans-serif;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
 
-/* CARDS */
-.card{
-  background:var(--asphalt-2);border:1px solid var(--line);border-radius:14px;
-  padding:16px 18px;margin-bottom:14px;
-}
-.card h3{font-size:15px;margin:0 0 8px;color:var(--paper);display:flex;align-items:center;gap:8px;}
-.card p{font-size:13.5px;line-height:1.5;color:var(--ink);margin:4px 0;}
-.tag{display:inline-block;font-size:10.5px;font-family:'Oswald';letter-spacing:0.05em;text-transform:uppercase;padding:3px 9px;border-radius:100px;margin-right:6px;}
-.tag.water{background:rgba(63,182,199,0.18);color:var(--water);}
-.tag.coffee{background:rgba(196,138,74,0.18);color:var(--coffee);}
-.tag.sun{background:rgba(255,210,63,0.16);color:var(--sun);}
+    a {
+      color: var(--water);
+    }
 
-/* DAY TIMELINE */
-.day{display:flex;gap:14px;margin-bottom:2px;}
-.day .date{
-  flex:0 0 54px;text-align:center;font-family:'Oswald';
-}
-.day .date .d{font-size:20px;color:var(--sun);line-height:1;}
-.day .date .m{font-size:10px;color:var(--muted);letter-spacing:0.1em;}
-.day .rail{flex:0 0 16px;position:relative;}
-.day .rail::before{content:"";position:absolute;left:7px;top:6px;bottom:-18px;width:2px;background:var(--line);}
-.day:last-child .rail::before{display:none;}
-.day .dot{width:12px;height:12px;border-radius:50%;background:var(--water-dk);border:2px solid var(--water);margin-top:4px;}
-.day .content{flex:1;padding-bottom:22px;}
-.day .content h4{margin:0 0 4px;font-size:14.5px;font-family:'Oswald';color:var(--paper);text-transform:none;letter-spacing:0;}
-.day .content p{margin:0;font-size:13px;color:var(--muted);line-height:1.45;}
-.day .stay{display:inline-block;margin-top:6px;font-size:11.5px;color:var(--sage);}
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 16px 60px;
+    }
 
-/* FILTER PILLS */
-.filters{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
-.filters button{
-  background:var(--asphalt-2);border:1px solid var(--line);color:var(--muted);
-  padding:8px 14px;border-radius:100px;font-size:12.5px;font-family:'Oswald';letter-spacing:0.04em;cursor:pointer;
-}
-.filters button.active{background:var(--sun);color:var(--asphalt);border-color:var(--sun);font-weight:600;}
+    /* HERO */
+    .hero {
+      position: relative;
+      background:
+        repeating-linear-gradient(180deg, transparent 0 26px, var(--sun) 26px 44px, transparent 44px 70px),
+        linear-gradient(180deg, #1a2029, #0f1319);
+      background-size: 6px 100%, 100% 100%;
+      background-position: center top, center;
+      background-repeat: repeat-y, no-repeat;
+      padding: 36px 20px 28px;
+      border-bottom: 4px solid var(--sun);
+      text-align: center;
+    }
 
-.attraction{display:none;}
-.attraction.show{display:block;}
-.attraction .price{font-weight:600;}
-.attraction .price.free{color:var(--free);}
-.attraction .price.paid{color:var(--paid);}
-.maplink{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:12.5px;color:var(--water);text-decoration:none;border:1px solid var(--water-dk);padding:6px 12px;border-radius:8px;}
-.maplink:active{background:rgba(63,182,199,0.15);}
+    .hero .eyebrow {
+      color: var(--sun);
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      font-family: 'Oswald';
+      font-weight: 600;
+    }
 
-/* CALCULATOR */
-.calc-row{display:flex;gap:10px;margin-bottom:12px;}
-.calc-row .field{flex:1;}
-.calc-row label{display:block;font-size:11.5px;color:var(--muted);margin-bottom:5px;font-family:'Oswald';letter-spacing:0.04em;}
-.calc-row input{
-  width:100%;background:var(--asphalt);border:1px solid var(--line);color:var(--ink);
-  padding:10px 12px;border-radius:8px;font-size:15px;font-family:'Inter';
-}
-.result{
-  margin-top:14px;padding:14px 16px;border-radius:10px;font-size:14px;font-weight:600;text-align:center;
-}
-.result.eth{background:rgba(111,143,90,0.18);color:var(--sage);border:1px solid var(--sage);}
-.result.gas{background:rgba(196,138,74,0.18);color:var(--coffee);border:1px solid var(--coffee);}
-.hint{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.5;}
+    .hero h1 {
+      font-size: 30px;
+      margin: 8px 0 4px;
+      color: var(--paper);
+      line-height: 1.05;
+    }
 
-/* CHECKLIST */
-.check-item{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:13.5px;}
-.check-item:last-child{border-bottom:none;}
-.check-item input{width:18px;height:18px;flex:0 0 18px;margin-top:1px;accent-color:var(--sun);}
-.check-item.critical span{color:var(--sun);font-size:10px;font-family:'Oswald';letter-spacing:0.08em;display:block;margin-top:2px;}
-.progress-wrap{background:var(--asphalt);border-radius:100px;height:8px;overflow:hidden;margin-bottom:18px;border:1px solid var(--line);}
-.progress-bar{height:100%;background:linear-gradient(90deg,var(--sun),var(--coffee));width:0%;transition:width .3s;}
+    .hero .route {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 6px;
+      font-family: 'Inter';
+      text-transform: none;
+      letter-spacing: 0;
+    }
 
-.section-title{font-size:13px;color:var(--muted);letter-spacing:0.12em;margin:26px 0 10px;}
-.section-title:first-child{margin-top:0;}
+    .hero .dates {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--asphalt-2);
+      border: 1px solid var(--line);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--ink);
+    }
 
-.toll-table{width:100%;border-collapse:collapse;font-size:13px;}
-.toll-table td,.toll-table th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;}
-.toll-table th{color:var(--muted);font-family:'Oswald';font-size:11px;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;}
+    /* TABS */
+    .tabbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      gap: 0;
+      background: var(--asphalt);
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+    }
 
-footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:11.5px;}
-</style>
+    .tabbar button {
+      flex: 1;
+      min-width: 110px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-family: 'Oswald';
+      font-size: 12.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 8px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tabbar button.active {
+      color: var(--ink);
+      border-bottom-color: var(--sun);
+    }
+
+    .panel {
+      display: none;
+      padding-top: 22px;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--asphalt-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin: 0 0 8px;
+      color: var(--paper);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card p {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--ink);
+      margin: 4px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-family: 'Oswald';
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 100px;
+      margin-right: 6px;
+    }
+
+    .tag.water {
+      background: rgba(63, 182, 199, 0.18);
+      color: var(--water);
+    }
+
+    .tag.coffee {
+      background: rgba(196, 138, 74, 0.18);
+      color: var(--coffee);
+    }
+
+    .tag.sun {
+      background: rgba(255, 210, 63, 0.16);
+      color: var(--sun);
+    }
+
+    /* DAY TIMELINE */
+    .day {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 2px;
+    }
+
+    .day .date {
+      flex: 0 0 54px;
+      text-align: center;
+      font-family: 'Oswald';
+    }
+
+    .day .date .d {
+      font-size: 20px;
+      color: var(--sun);
+      line-height: 1;
+    }
+
+    .day .date .m {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    .day .rail {
+      flex: 0 0 16px;
+      position: relative;
+    }
+
+    .day .rail::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      bottom: -18px;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .day:last-child .rail::before {
+      display: none;
+    }
+
+    .day .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--water-dk);
+      border: 2px solid var(--water);
+      margin-top: 4px;
+    }
+
+    .day .content {
+      flex: 1;
+      padding-bottom: 22px;
+    }
+
+    .day .content h4 {
+      margin: 0 0 4px;
+      font-size: 14.5px;
+      font-family: 'Oswald';
+      color: var(--paper);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .day .content p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .day .stay {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 11.5px;
+      color: var(--sage);
+    }
+
+    /* FILTER PILLS */
+    .filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .filters button {
+      background: var(--asphalt-2);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      padding: 8px 14px;
+      border-radius: 100px;
+      font-size: 12.5px;
+      font-family: 'Oswald';
+      letter-spacing: 0.04em;
+      cursor: pointer;
+    }
+
+    .filters button.active {
+      background: var(--sun);
+      color: var(--asphalt);
+      border-color: var(--sun);
+      font-weight: 600;
+    }
+
+    .attraction {
+      display: none;
+    }
+
+    .attraction.show {
+      display: block;
+    }
+
+    .attraction .price {
+      font-weight: 600;
+    }
+
+    .attraction .price.free {
+      color: var(--free);
+    }
+
+    .attraction .price.paid {
+      color: var(--paid);
+    }
+
+    .maplink {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 8px;
+      font-size: 12.5px;
+      color: var(--water);
+      text-decoration: none;
+      border: 1px solid var(--water-dk);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .maplink:active {
+      background: rgba(63, 182, 199, 0.15);
+    }
+
+    .ticketlink {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 8px;
+      margin-right: 8px;
+      font-size: 12.5px;
+      color: var(--sun);
+      text-decoration: none;
+      border: 1px solid var(--sun);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .ticketlink:active {
+      background: rgba(255, 210, 63, 0.15);
+    }
+
+    .linkrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* CALCULATOR */
+    .calc-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .calc-row .field {
+      flex: 1;
+    }
+
+    .calc-row label {
+      display: block;
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-bottom: 5px;
+      font-family: 'Oswald';
+      letter-spacing: 0.04em;
+    }
+
+    .calc-row input {
+      width: 100%;
+      background: var(--asphalt);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: 'Inter';
+    }
+
+    .result {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .result.eth {
+      background: rgba(111, 143, 90, 0.18);
+      color: var(--sage);
+      border: 1px solid var(--sage);
+    }
+
+    .result.gas {
+      background: rgba(196, 138, 74, 0.18);
+      color: var(--coffee);
+      border: 1px solid var(--coffee);
+    }
+
+    .hint {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* CHECKLIST */
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 13.5px;
+    }
+
+    .check-item:last-child {
+      border-bottom: none;
+    }
+
+    .check-item input {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      margin-top: 1px;
+      accent-color: var(--sun);
+    }
+
+    .check-item.critical span {
+      color: var(--sun);
+      font-size: 10px;
+      font-family: 'Oswald';
+      letter-spacing: 0.08em;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .progress-wrap {
+      background: var(--asphalt);
+      border-radius: 100px;
+      height: 8px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 1px solid var(--line);
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--sun), var(--coffee));
+      width: 0%;
+      transition: width .3s;
+    }
+
+    .section-title {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      margin: 26px 0 10px;
+    }
+
+    .section-title:first-child {
+      margin-top: 0;
+    }
+
+    .toll-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .toll-table td,
+    .toll-table th {
+      padding: 8px 6px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .toll-table th {
+      color: var(--muted);
+      font-family: 'Oswald';
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      color: var(--muted);
+      font-size: 11.5px;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="hero">
-  <div class="eyebrow">Estrada · Água Quente · Serra do Café</div>
-  <h1>Roteiro de Família</h1>
-  <div class="route">Várzea Grande-MT → Chapadão do Sul → Rio Preto → Olímpia → Serra Negra → volta</div>
-  <div class="dates">01 a 14 de Agosto de 2026</div>
-</div>
-
-<div class="tabbar" id="tabbar">
-  <button class="active" data-tab="roteiro">Roteiro</button>
-  <button data-tab="passeios">Passeios</button>
-  <button data-tab="combustivel">Combustível</button>
-  <button data-tab="carro">Carro</button>
-  <button data-tab="volta">Volta</button>
-</div>
-
-<div class="wrap">
-
-  <!-- ROTEIRO -->
-  <div class="panel active" id="p-roteiro">
-    <div class="section-title">Semana 1 — Foco: Crianças</div>
-
-    <div class="day">
-      <div class="date"><div class="d">01</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Saída de Várzea Grande-MT</h4>
-        <p>Rumo a Chapadão do Sul-MS. Primeira parada longa — revezar direção e monitorar combustível.</p>
-        <span class="stay">🏨 Hotel Nathus Ltda, Chapadão do Sul-MS</span>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="date"><div class="d">02</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Chapadão do Sul → Rio Preto → Olímpia</h4>
-        <p>Manhã: lojas (tipo Decathlon), almoço na cidade, volta de carro pelos pontos turísticos de Rio Preto. Saída para Olímpia com meta de chegar ao Hot Beach Celebration às 16h.</p>
-        <span class="stay">🏨 ibis Styles Rio Preto Monte Líbano / check-in Hot Beach Celebration</span>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="date"><div class="d">03-07</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Olímpia-SP — Hot Beach Celebration</h4>
-        <p>Parque aquático incluso na hospedagem. Reservar 1 dia para Vale dos Dinossauros.</p>
-        <span class="stay">🏨 Hot Beach Celebration (5 noites)</span>
-      </div>
-    </div>
-
-    <div class="section-title">Semana 2 — Foco: Família e Compras</div>
-
-    <div class="day">
-      <div class="date"><div class="d">07</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Olímpia → Serra Negra</h4>
-        <p>Check-out do Hot Beach, deslocamento até o Residencial Boomerang.</p>
-        <span class="stay">🏨 Residencial Boomerang, Serra Negra</span>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="date"><div class="d">08</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Águas de Lindóia — dia inteiro</h4>
-        <p>Lojinhas da cidade + Mirante de Lindóia.</p>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="date"><div class="d">09-11</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Serra Negra / Monte Sião / Socorro</h4>
-        <p>1 cidade-satélite por dia. Holambra é opcional — corte primeiro se a família estiver cansada, é o mais distante e o de menor apelo infantil.</p>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="date"><div class="d">12</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Saída de Serra Negra — retorno</h4>
-        <p>Início da volta para Várzea Grande-MT.</p>
-        <span class="stay">🏨 Santa Fé do Sul-SP</span>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="date"><div class="d">13</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Santa Fé do Sul → MT</h4>
-        <p>Pernoite a definir — ver aba "Volta" para opções.</p>
-        <span class="stay">🏨 Alto Araguaia-MT (provável)</span>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="date"><div class="d">14</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Chegada em Várzea Grande-MT</h4>
-        <p>Fim da viagem 🏁</p>
-      </div>
-    </div>
+  <div class="hero">
+    <div class="eyebrow">Estrada · Água Quente · Serra do Café</div>
+    <h1>Roteiro de Família</h1>
+    <div class="route">Várzea Grande-MT → Chapadão do Sul → Rio Preto → Olímpia → Serra Negra → volta</div>
+    <div class="dates">01 a 14 de Agosto de 2026</div>
   </div>
 
-  <!-- PASSEIOS -->
-  <div class="panel" id="p-passeios">
-    <div class="filters" id="filters">
-      <button class="active" data-f="all">Todos</button>
-      <button data-f="kids">Kids-first</button>
-      <button data-f="family">Família</button>
-      <button data-f="couple">Casal</button>
-    </div>
-
-    <div class="section-title">Olímpia-SP</div>
-
-    <div class="card attraction show" data-cat="kids family">
-      <h3>💦 Hot Beach Celebration <span class="tag water">Kids</span></h3>
-      <p>Parque aquático de água quente + resort. <span class="price free">Grátis para hóspedes</span> — acesso ilimitado incluso na diária.</p>
-      <p>⏰ 9h-17h, fechado seg (exceto julho/férias/feriados)</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Hot+Beach+Celebration+Olimpia+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="kids family">
-      <h3>🦖 Vale dos Dinossauros <span class="tag sun">Kids</span></h3>
-      <p><span class="price paid">R$ 90-100</span> inteira / R$ 45-50 criança (3-11 anos). Compre antecipado online — ~R$10 mais barato por pessoa.</p>
-      <p>⏰ Todos os dias, 9h-19h</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vale+dos+Dinossauros+Olimpia+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="family">
-      <h3>🛍️ Villa Mall Olímpia <span class="tag sun">Família</span></h3>
-      <p>Shopping — boa opção para dia de chuva ou calor extremo.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Villa+Mall+Olimpia+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="family">
-      <h3>🕯️ Museu de Cera Dreamland <span class="tag sun">Família</span></h3>
-      <p>Combo com Vale dos Dinossauros costuma sair mais barato — perguntar na bilheteria.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Museu+de+Cera+Dreamland+Olimpia+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="family">
-      <h3>🕹️ Orionverso Mundo Virtual <span class="tag sun">Família</span></h3>
-      <p>Experiência imersiva — checar faixa etária mínima antes de ir com a criança de 5 anos.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Orionverso+Olimpia+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="section-title">Serra Negra e Região</div>
-
-    <div class="card attraction show" data-cat="kids family">
-      <h3>🚠 Teleférico até o Cristo Redentor <span class="tag water">Kids</span></h3>
-      <p><span class="price paid">R$ 20</span> ida e volta adulto / R$ 10 idoso. Crianças pequenas no colo não pagam.</p>
-      <p>⏰ Seg-sex 9h30-17h · Sáb/dom/feriados 9h-17h30</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Teleferico+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="family">
-      <h3>🌸 Vitrine das Flores Park <span class="tag sun">Família</span></h3>
-      <p><span class="price paid">R$ 15</span> adulto. Crianças até 12 anos grátis.</p>
-      <p>⏰ Qua-sex 9h-17h · Sáb 9h-18h</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vitrine+das+Flores+Park+Serra+Negra" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="kids family">
-      <h3>🤖 Disneylândia dos Robôs <span class="tag water">Kids</span></h3>
-      <p><span class="price paid">R$ 20</span> adulto / R$ 10 criança-idoso-estudante.</p>
-      <p>⏰ Ter-dom 10h-17h (última entrada 16h30)</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Disneylandia+dos+Robos+Serra+Negra" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="family">
-      <h3>🌿 Bioparque Serra Negra <span class="tag sun">Família</span></h3>
-      <p><span class="price paid">R$ 40</span> trilhas livres. Visita monitorada com biólogo: R$ 80 (agendar via WhatsApp).</p>
-      <p>⏰ Sáb, dom, feriados 10h-17h</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bioparque+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="family">
-      <h3>🌅 Mirante Alto da Serra <span class="tag sun">Família</span></h3>
-      <p><span class="price free">Grátis</span>. Melhor horário: pôr do sol.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Mirante+Alto+da+Serra+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="family">
-      <h3>💧 Fontana di Trevi & Fonte São Luiz <span class="tag sun">Família</span></h3>
-      <p><span class="price free">Grátis</span> — fontes terapêuticas do Circuito das Águas.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fontana+di+Trevi+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="family">
-      <h3>💦 Represa Santa Lídia <span class="tag sun">Família</span></h3>
-      <p><span class="price free">Grátis</span> — verificar acesso no dia.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Represa+Santa+Lidia+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="couple">
-      <h3>🍷 Vinícola Silotto <span class="tag coffee">Casal</span></h3>
-      <p>Degustação de vinhos e cachaças artesanais. Programar sem as crianças ou com atividade paralela.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vinicola+Silotto+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="couple">
-      <h3>☕ Museu do Café + Alambique <span class="tag coffee">Casal</span></h3>
-      <p>Sítio São Geraldo — Rota do Café. Passeio contemplativo, menor apelo infantil.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Sitio+Sao+Geraldo+Rota+do+Cafe+Serra+Negra" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="card attraction show" data-cat="couple">
-      <h3>☕ Café Nonno Marchi <span class="tag coffee">Casal</span></h3>
-      <p>Ambiente ideal para um momento a dois.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Nonno+Marchi+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="section-title">Restaurantes</div>
-    <div class="card attraction show" data-cat="family couple">
-      <h3>🍗 Olenheiro Restaurante</h3>
-      <p>Rod. Eng. Constâncio Cintra, 2957-2911 — Jardim do Lago</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Rod.+Eng.+Constancio+Cintra+2957+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-    <div class="card attraction show" data-cat="family couple">
-      <h3>🥩 Serranomeat</h3>
-      <p>Jardim Parque das Palmeiras</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Serranomeat+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-    <div class="card attraction show" data-cat="couple">
-      <h3>🍝 Lá Terrazza</h3>
-      <p>Sugestão de almoço em Serra Negra.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=La+Terrazza+Serra+Negra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-
-    <div class="section-title">Cidades-satélite (1 por dia)</div>
-    <div class="card attraction show" data-cat="family">
-      <h3>Monte Sião <span class="tag sun">Malharias</span></h3>
-      <p>Compras de roupas de inverno direto da fábrica.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Monte+Siao+MG" target="_blank">📍 Ver no mapa</a>
-    </div>
-    <div class="card attraction show" data-cat="family">
-      <h3>Socorro <span class="tag sun">Aventura</span></h3>
-      <p>Turismo de aventura — verificar atrações abertas na época.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Socorro+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
-    <div class="card attraction show" data-cat="couple">
-      <h3>Holambra <span class="tag coffee">Opcional</span></h3>
-      <p>Mais distante e menos voltado a criança pequena — primeiro item a cortar se a energia da família cair.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Holambra+SP" target="_blank">📍 Ver no mapa</a>
-    </div>
+  <div class="tabbar" id="tabbar">
+    <button class="active" data-tab="roteiro">Roteiro</button>
+    <button data-tab="passeios">Passeios</button>
+    <button data-tab="combustivel">Combustível</button>
+    <button data-tab="carro">Carro</button>
+    <button data-tab="volta">Volta</button>
   </div>
 
-  <!-- COMBUSTÍVEL -->
-  <div class="panel" id="p-combustivel">
-    <div class="card">
-      <h3>⛽ Calculadora Etanol vs Gasolina</h3>
-      <p>Informe os preços do posto. A regra: se a razão etanol/gasolina for até 0,70, o etanol compensa.</p>
-      <div class="calc-row">
-        <div class="field">
-          <label>Preço etanol (R$/l)</label>
-          <input type="number" step="0.01" id="ethPrice" placeholder="3,99">
+  <div class="wrap">
+
+    <!-- ROTEIRO -->
+    <div class="panel active" id="p-roteiro">
+      <div class="section-title">Semana 1 — Foco: Crianças</div>
+
+      <div class="day">
+        <div class="date">
+          <div class="d">01</div>
+          <div class="m">AGO</div>
         </div>
-        <div class="field">
-          <label>Preço gasolina (R$/l)</label>
-          <input type="number" step="0.01" id="gasPrice" placeholder="5,89">
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Saída de Várzea Grande-MT</h4>
+          <p>Rumo a Chapadão do Sul-MS. Primeira pernoite — monitorar combustível e condições do veículo.</p>
+          <a href="https://maps.app.goo.gl/gTLkbbJS1UgNfmYx6" target="_blank">
+            <span class="stay">🏨 Hotel Nathus Ltda, Chapadão do Sul-MS</span></a>
         </div>
       </div>
-      <button onclick="calcFuel()" style="width:100%;background:var(--sun);color:var(--asphalt);border:none;padding:12px;border-radius:8px;font-family:'Oswald';font-weight:600;letter-spacing:0.05em;text-transform:uppercase;">Calcular</button>
-      <div id="fuelResult"></div>
-      <div class="hint">Base Inmetro HB20 TGDI: etanol ~9,9 km/l estrada · gasolina ~14,7 km/l estrada. Consumo real cai 10-20% com AC ligado, carro carregado e 4 ocupantes.</div>
-    </div>
 
-    <div class="card">
-      <h3>🛣️ Pedágios — BR-163/MT (Nova Rota do Oeste)</h3>
-      <table class="toll-table">
-        <tr><th>Praça</th><th>Valor</th></tr>
-        <tr><td>Rondonópolis</td><td>R$ 6,70</td></tr>
-        <tr><td>Campo Verde</td><td>~R$ 5,30–10,40</td></tr>
-        <tr><td>Santo Antônio do Leverger</td><td>~R$ 5,30–10,40</td></tr>
-        <tr><td><b>Total Rondonópolis→Cuiabá</b></td><td><b>~R$ 17,70</b></td></tr>
-      </table>
-      <p class="hint">Trechos MS e SP não confirmados nesta pesquisa — instale o app ViaFácil / Sem Parar e confira o valor pelo Waze antes de sair.</p>
-    </div>
+      <div class="day">
+        <div class="date">
+          <div class="d">02</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Chapadão do Sul → Rio Preto</h4>
+          <p>Manhã do dia 03: lojas (tipo Decathlon), almoço na cidade, volta de carro pelos pontos turísticos de Rio
+            Preto.</p>
+          <a href="https://maps.app.goo.gl/AZkrAwNkywmswkT67" target="_blank">
+            <span class="stay">🏨 ibis Styles Rio Preto Monte Líbano</span></a>
+        </div>
+      </div>
 
-    <div class="card">
-      <h3>⛽ Postos recomendados na rota MT/MS</h3>
-      <p>Rede Marajó, Grupo Platinão e Rede Aldo Locatelli — bem avaliadas na BR-163 e BR-364, atendem passeio e pesados.</p>
-      <p class="hint">Abasteça sempre acima de 1/4 de tanque antes de trechos longos sem cidade — menor densidade de postos entre Chapadão do Sul e Rio Preto.</p>
-    </div>
-  </div>
+      <div class="day">
+        <div class="date">
+          <div class="d">03-07</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Rio Preto → Olímpia-SP — Hot Beach Celebration</h4>
+          <p>Saída para Olímpia com meta de chegar ao Hot Beach Celebration às 16h.</p>
+          <p>Parque aquático incluso na hospedagem. Reservar 1 dia para Vale dos Dinossauros.</p>
+          <a href="https://maps.app.goo.gl/FiK7pacVHeiVqvay8" target="_blank">
+            <span class="stay">🏨 Hot Beach Celebration (5 noites)</span></a>
+        </div>
+      </div>
 
-  <!-- CARRO -->
-  <div class="panel" id="p-carro">
-    <div class="card">
-      <h3>🔧 Revisão Preventiva do HB20S</h3>
-      <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="section-title">Semana 2 — Foco: Família e Compras</div>
 
-      <div class="section-title" style="margin-top:0;">Itens críticos — não negocie</div>
-      <div id="criticalList"></div>
+      <div class="day">
+        <div class="date">
+          <div class="d">07</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Olímpia → Serra Negra</h4>
+          <p>Check-out do Hot Beach, deslocamento até o Residencial Boomerang.</p>
+          <a href="https://maps.app.goo.gl/dFAc8smyaziWeg477" target="_blank">
+            <span class="stay">🏨 Residencial Boomerang, Serra Negra</span></a>
+        </div>
+      </div>
 
-      <div class="section-title">Itens importantes — não ignore</div>
-      <div id="importantList"></div>
-    </div>
-  </div>
+      <div class="day">
+        <div class="date">
+          <div class="d">08</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Águas de Lindóia — dia inteiro</h4>
+          <p>Lojinhas da cidade + Mirante de Lindóia.</p>
+        </div>
+      </div>
 
-  <!-- VOLTA -->
-  <div class="panel" id="p-volta">
-    <div class="day">
-      <div class="date"><div class="d">12</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Serra Negra → Santa Fé do Sul-SP</h4>
-        <p>Início do trajeto de volta.</p>
+      <div class="day">
+        <div class="date">
+          <div class="d">09-11</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Serra Negra / Monte Sião / Socorro</h4>
+          <p>1 cidade-satélite por dia. Holambra é opcional — corte primeiro se a família estiver cansada, é o mais
+            distante e o de menor apelo infantil.</p>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="date">
+          <div class="d">12</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Saída de Serra Negra — retorno → Santa Fé do Sul</h4>
+          <p>Início da volta para Várzea Grande-MT.</p>
+          <a href="https://maps.app.goo.gl/kpq1zsRuf2UshvBS7" target="_blank">
+            <span class="stay">🏨 Hotel Portal da Mata</span></a>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="date">
+          <div class="d">13</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Santa Fé do Sul → MT</h4>
+          <p>Pernoite a definir — ver aba "Volta" para opções.</p>
+          <a href="" target="_blank">
+            <span class="stay">🏨 Alto Araguaia-MT (provável)</span></a>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="date">
+          <div class="d">14</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Chegada em Várzea Grande-MT</h4>
+          <a href="https://maps.app.goo.gl/HWCcj1y5mJCvpjC5A" target="_blank">
+            <span class="stay">Fim da viagem 🏁</span>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="day">
-      <div class="date"><div class="d">13</div><div class="m">AGO</div></div>
-      <div class="rail"><div class="dot"></div></div>
-      <div class="content">
-        <h4>Santa Fé do Sul → MT</h4>
-        <p>Opções de pernoite a avaliar:</p>
+
+    <!-- PASSEIOS -->
+    <div class="panel" id="p-passeios">
+      <div class="filters" id="filters">
+        <button class="active" data-f="all">Todos</button>
+        <button data-f="kids">Kids-first</button>
+        <button data-f="family">Família</button>
+        <button data-f="couple">Casal</button>
+      </div>
+
+      <div class="section-title">Olímpia-SP</div>
+
+      <div class="card attraction show" data-cat="kids family">
+        <h3>💦 Hot Beach Celebration <span class="tag water">Kids</span></h3>
+        <p>Parque aquático de água quente + resort. <span class="price free">Grátis para hóspedes</span> — acesso
+          ilimitado incluso na diária.</p>
+        <p>⏰ 9h-17h, fechado seg (exceto julho/férias/feriados)</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Hot+Beach+Celebration+Olimpia+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="kids family">
+        <h3>🦖 Vale dos Dinossauros <span class="tag sun">Kids</span></h3>
+        <p><span class="price paid">R$ 90-100</span> inteira / R$ 50-70 criança (4-11 anos). Compre antecipado online —
+          ~R$10 mais barato por pessoa.</p>
+        <p>⏰ Todos os dias, 9h-19h</p>
+        <div class="linkrow">
+          <a class="ticketlink" href="https://ingressos.olimpiathermasparque.com.br/" target="_blank">🎟️ Ingresso
+            On-line</a>
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vale+dos+Dinossauros+Olimpia+SP"
+            target="_blank">📍 Ver no mapa</a>
+        </div>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🛍️ Villa Mall Olímpia <span class="tag sun">Família</span></h3>
+        <p>Shopping — boa opção para dia de chuva ou calor extremo.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Villa+Mall+Olimpia+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🕯️ Museu de Cera Dreamland <span class="tag sun">Família</span></h3>
+        <p>Combo com Vale dos Dinossauros costuma sair mais barato — perguntar na bilheteria.</p>
+        <p><span class="price paid">R$ 90-100</span> inteira / R$ 50-70 criança (4-11 anos).</p>
+        <div class="linkrow">
+          <a class="ticketlink" href="https://ingressos.olimpiathermasparque.com.br/" target="_blank">🎟️ Ingresso
+            On-line</a>
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Museu+de+Cera+Dreamland+Olimpia+SP"
+            target="_blank">📍 Ver no mapa</a>
+        </div>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🕹️ Orionverso Mundo Virtual <span class="tag sun">Família</span></h3>
+        <p><span class="price paid">~R$ 600,00</span> para grupos de 4 pessoas (24 créditos). Experiência imersiva —
+          checar faixa etária mínima antes
+          de ir com a criança de 5 anos.</p>
+        <div class="linkrow">
+          <a class="ticketlink" href="https://ingressos.olimpiathermasparque.com.br/" target="_blank">🎟️ Ingresso
+            On-line</a>
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Orionverso+Olimpia+SP"
+            target="_blank">📍 Ver no mapa</a>
+        </div>
+      </div>
+
+      <div class="section-title">Serra Negra e Região</div>
+
+      <div class="card attraction show" data-cat="kids family">
+        <h3>🚠 Teleférico até o Cristo Redentor <span class="tag water">Kids</span></h3>
+        <p><span class="price paid">R$ 20</span> ida e volta adulto / R$ 10 idoso. Crianças pequenas no colo não pagam.
+        </p>
+        <p>⏰ Seg-sex 9h30-17h · Sáb/dom/feriados 9h-17h30</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Teleferico+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🌸 Vitrine das Flores Park <span class="tag sun">Família</span></h3>
+        <p><span class="price paid">R$ 15</span> adulto. Crianças até 12 anos grátis.</p>
+        <p>⏰ Qua-sex 9h-17h · Sáb 9h-18h</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vitrine+das+Flores+Park+Serra+Negra"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="kids family">
+        <h3>🤖 Disneylândia dos Robôs <span class="tag water">Kids</span></h3>
+        <p><span class="price paid">R$ 20</span> adulto / R$ 10 criança-idoso-estudante.</p>
+        <p>⏰ Ter-dom 10h-17h (última entrada 16h30)</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Disneylandia+dos+Robos+Serra+Negra"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🌿 Bioparque Serra Negra <span class="tag sun">Família</span></h3>
+        <p><span class="price paid">R$ 40</span> trilhas livres. Visita monitorada com biólogo: R$ 80 (agendar via
+          WhatsApp).</p>
+        <p>⏰ Sáb, dom, feriados 10h-17h</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bioparque+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🌅 Mirante Alto da Serra <span class="tag sun">Família</span></h3>
+        <p><span class="price free">Grátis</span>. Melhor horário: pôr do sol.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Mirante+Alto+da+Serra+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>💧 Fontana di Trevi & Fonte São Luiz <span class="tag sun">Família</span></h3>
+        <p><span class="price free">Grátis</span> — fontes terapêuticas do Circuito das Águas.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Fontana+di+Trevi+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>💦 Represa Santa Lídia <span class="tag sun">Família</span></h3>
+        <p><span class="price free">Grátis</span> — verificar acesso no dia.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Represa+Santa+Lidia+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="couple">
+        <h3>🍷 Vinícola Silotto <span class="tag coffee">Casal</span></h3>
+        <p>Degustação de vinhos e cachaças artesanais. Programar sem as crianças ou com atividade paralela.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vinicola+Silotto+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="couple">
+        <h3>☕ Museu do Café + Alambique <span class="tag coffee">Casal</span></h3>
+        <p>Sítio São Geraldo — Rota do Café. Passeio contemplativo, menor apelo infantil.</p>
+        <a class="maplink"
+          href="https://www.google.com/maps/search/?api=1&query=Sitio+Sao+Geraldo+Rota+do+Cafe+Serra+Negra"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="couple">
+        <h3>☕ Café Nonno Marchi <span class="tag coffee">Casal</span></h3>
+        <p>Ambiente ideal para um momento a dois.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Nonno+Marchi+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="section-title">Restaurantes</div>
+      <div class="card attraction show" data-cat="family couple">
+        <h3>🍗 Olenheiro Restaurante</h3>
+        <p>Rod. Eng. Constâncio Cintra, 2957-2911 — Jardim do Lago</p>
+        <a class="maplink"
+          href="https://www.google.com/maps/search/?api=1&query=Rod.+Eng.+Constancio+Cintra+2957+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+      <div class="card attraction show" data-cat="family couple">
+        <h3>🥩 Serranomeat</h3>
+        <p>Jardim Parque das Palmeiras</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Serranomeat+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+      <div class="card attraction show" data-cat="couple">
+        <h3>🍝 Lá Terrazza</h3>
+        <p>Sugestão de almoço em Serra Negra.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=La+Terrazza+Serra+Negra+SP"
+          target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="section-title">Cidades-satélite (1 por dia)</div>
+      <div class="card attraction show" data-cat="family">
+        <h3>Monte Sião <span class="tag sun">Malharias</span></h3>
+        <p>Compras de roupas de inverno direto da fábrica.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Monte+Siao+MG" target="_blank">📍 Ver
+          no mapa</a>
+      </div>
+      <div class="card attraction show" data-cat="family">
+        <h3>Socorro <span class="tag sun">Aventura</span></h3>
+        <p>Turismo de aventura — verificar atrações abertas na época.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Socorro+SP" target="_blank">📍 Ver no
+          mapa</a>
+      </div>
+      <div class="card attraction show" data-cat="couple">
+        <h3>Holambra <span class="tag coffee">Opcional</span></h3>
+        <p>Mais distante e menos voltado a criança pequena — primeiro item a cortar se a energia da família cair.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Holambra+SP" target="_blank">📍 Ver no
+          mapa</a>
       </div>
     </div>
 
-    <div class="card">
-      <h3>Alto Araguaia-MT <span class="tag water">Provável</span></h3>
-      <p>Divisa MT/MS — opção mais direta na BR-364/BR-163 para fechar em 14/08.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Alto+Araguaia+MT" target="_blank">📍 Ver no mapa</a>
-    </div>
-    <div class="card">
-      <h3>Alto Taquari-MT <span class="tag sun">Alternativa</span></h3>
-      <p>Cidade pequena, útil se Alto Araguaia estiver sem vaga na época.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Alto+Taquari+MT" target="_blank">📍 Ver no mapa</a>
-    </div>
-    <div class="card">
-      <h3>Rondonópolis-MT <span class="tag coffee">Mais estrutura</span></h3>
-      <p>Maior rede hoteleira, mas encurta o penúltimo dia — verificar se não deixa o trecho final de 14/08 longo demais.</p>
-      <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Rondonopolis+MT" target="_blank">📍 Ver no mapa</a>
-    </div>
+    <!-- COMBUSTÍVEL -->
+    <div class="panel" id="p-combustivel">
+      <div class="card">
+        <h3>⛽ Calculadora Etanol vs Gasolina</h3>
+        <p>Informe os preços do posto. A regra: se a razão etanol/gasolina for até 0,70, o etanol compensa.</p>
+        <div class="calc-row">
+          <div class="field">
+            <label>Preço etanol (R$/l)</label>
+            <input type="number" step="0.01" id="ethPrice" placeholder="3,99">
+          </div>
+          <div class="field">
+            <label>Preço gasolina (R$/l)</label>
+            <input type="number" step="0.01" id="gasPrice" placeholder="5,89">
+          </div>
+        </div>
+        <button onclick="calcFuel()"
+          style="width:100%;background:var(--sun);color:var(--asphalt);border:none;padding:12px;border-radius:8px;font-family:'Oswald';font-weight:600;letter-spacing:0.05em;text-transform:uppercase;">Calcular</button>
+        <div id="fuelResult"></div>
+        <div class="hint">Base Inmetro HB20 TGDI: etanol ~9,9 km/l estrada · gasolina ~14,7 km/l estrada. Consumo real
+          cai 10-20% com AC ligado, carro carregado e 4 ocupantes.</div>
+      </div>
 
-    <div class="day">
-      <div class="date"><div class="d">14</div><div class="m">AGO</div></div>
-      <div class="rail"></div>
-      <div class="content">
-        <h4>Chegada em Várzea Grande-MT</h4>
-        <p>Fim da viagem 🏁</p>
+      <div class="card">
+        <h3>🛣️ Pedágios — BR-163/MT (Nova Rota do Oeste)</h3>
+        <table class="toll-table">
+          <tr>
+            <th>Praça</th>
+            <th>Valor</th>
+          </tr>
+          <tr>
+            <td>Rondonópolis</td>
+            <td>R$ 6,70</td>
+          </tr>
+          <tr>
+            <td>Campo Verde</td>
+            <td>~R$ 5,30–10,40</td>
+          </tr>
+          <tr>
+            <td>Santo Antônio do Leverger</td>
+            <td>~R$ 5,30–10,40</td>
+          </tr>
+          <tr>
+            <td><b>Total Rondonópolis→Cuiabá</b></td>
+            <td><b>~R$ 17,70</b></td>
+          </tr>
+        </table>
+        <p class="hint">Trechos MS e SP não confirmados nesta pesquisa — instale o app ViaFácil / Sem Parar e confira o
+          valor pelo Waze antes de sair.</p>
+      </div>
+
+      <div class="card">
+        <h3>⛽ Postos recomendados na rota MT/MS</h3>
+        <p>Rede Marajó, Grupo Platinão e Rede Aldo Locatelli — bem avaliadas na BR-163 e BR-364, atendem passeio e
+          pesados.</p>
+        <p class="hint">Abasteça sempre acima de 1/4 de tanque antes de trechos longos sem cidade — menor densidade de
+          postos entre Chapadão do Sul e Rio Preto.</p>
       </div>
     </div>
+
+    <!-- CARRO -->
+    <div class="panel" id="p-carro">
+      <div class="card">
+        <h3>🔧 Revisão Preventiva do HB20S</h3>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="section-title" style="margin-top:0;">Itens críticos — não negocie</div>
+        <div id="criticalList"></div>
+
+        <div class="section-title">Itens importantes — não ignore</div>
+        <div id="importantList"></div>
+      </div>
+    </div>
+
+    <!-- VOLTA -->
+    <div class="panel" id="p-volta">
+      <div class="day">
+        <div class="date">
+          <div class="d">12</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Serra Negra → Santa Fé do Sul-SP</h4>
+          <p>Início do trajeto de volta.</p>
+        </div>
+      </div>
+      <div class="day">
+        <div class="date">
+          <div class="d">13</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail">
+          <div class="dot"></div>
+        </div>
+        <div class="content">
+          <h4>Santa Fé do Sul → MT</h4>
+          <p>Opções de pernoite a avaliar:</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Alto Araguaia-MT <span class="tag water">Provável</span></h3>
+        <p>Divisa MT/MS — opção mais direta na BR-364/BR-163 para fechar em 14/08.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Alto+Araguaia+MT" target="_blank">📍
+          Ver no mapa</a>
+      </div>
+      <div class="card">
+        <h3>Alto Taquari-MT <span class="tag sun">Alternativa</span></h3>
+        <p>Cidade pequena, útil se Alto Araguaia estiver sem vaga na época.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Alto+Taquari+MT" target="_blank">📍 Ver
+          no mapa</a>
+      </div>
+      <div class="card">
+        <h3>Rondonópolis-MT <span class="tag coffee">Mais estrutura</span></h3>
+        <p>Maior rede hoteleira, mas encurta o penúltimo dia — verificar se não deixa o trecho final de 14/08 longo
+          demais.</p>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Rondonopolis+MT" target="_blank">📍 Ver
+          no mapa</a>
+      </div>
+
+      <div class="day">
+        <div class="date">
+          <div class="d">14</div>
+          <div class="m">AGO</div>
+        </div>
+        <div class="rail"></div>
+        <div class="content">
+          <h4>Chegada em Várzea Grande-MT</h4>
+          <p>Fim da viagem 🏁</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-</div>
+  <footer>Roteiro gerado para a viagem de família — Ago/2026 · Confirme sempre preços e horários antes de sair, valores
+    sujeitos a alteração pelos parques e concessionárias.</footer>
 
-<footer>Roteiro gerado para a viagem de família — Ago/2026 · Confirme sempre preços e horários antes de sair, valores sujeitos a alteração pelos parques e concessionárias.</footer>
-
-<script>
-// TABS
-document.querySelectorAll('#tabbar button').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('#tabbar button').forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('p-'+btn.dataset.tab).classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
-  });
-});
-
-// FILTERS
-document.querySelectorAll('#filters button').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('#filters button').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.f;
-    document.querySelectorAll('.attraction').forEach(card=>{
-      const cats = card.dataset.cat.split(' ');
-      card.classList.toggle('show', f==='all' || cats.includes(f));
+  <script>
+    // TABS
+    document.querySelectorAll('#tabbar button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#tabbar button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('p-' + btn.dataset.tab).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     });
-  });
-});
 
-// FUEL CALCULATOR
-function calcFuel(){
-  const eth = parseFloat(document.getElementById('ethPrice').value);
-  const gas = parseFloat(document.getElementById('gasPrice').value);
-  const box = document.getElementById('fuelResult');
-  if(!eth || !gas){
-    box.innerHTML = '<div class="result gas">Preencha os dois preços.</div>';
-    return;
-  }
-  const ratio = eth/gas;
-  const kmlEth = 9.9, kmlGas = 14.7;
-  const costEthKm = eth/kmlEth;
-  const costGasKm = gas/kmlGas;
-  if(ratio <= 0.70){
-    box.innerHTML = `<div class="result eth">✅ Abasteça ETANOL — razão ${ratio.toFixed(2)}<br><span style="font-weight:400;font-size:12.5px;">Custo por km: R$ ${costEthKm.toFixed(3)} (etanol) vs R$ ${costGasKm.toFixed(3)} (gasolina)</span></div>`;
-  } else {
-    box.innerHTML = `<div class="result gas">⛽ Abasteça GASOLINA — razão ${ratio.toFixed(2)}<br><span style="font-weight:400;font-size:12.5px;">Custo por km: R$ ${costGasKm.toFixed(3)} (gasolina) vs R$ ${costEthKm.toFixed(3)} (etanol)</span></div>`;
-  }
-}
+    // FILTERS
+    document.querySelectorAll('#filters button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.f;
+        document.querySelectorAll('.attraction').forEach(card => {
+          const cats = card.dataset.cat.split(' ');
+          card.classList.toggle('show', f === 'all' || cats.includes(f));
+        });
+      });
+    });
 
-// CHECKLIST
-const criticalItems = [
-  "Óleo do motor + filtro de óleo (antecipar se próximo de 10.000 km)",
-  "Filtro de ar do motor",
-  "Filtro do ar-condicionado (cabine)",
-  "Filtro de combustível",
-  "Pastilhas e discos de freio (teste o pedal; desgaste >60% exige troca)",
-  "Fluido de freio (validade 2 anos)",
-  "Líquido de arrefecimento — nível e cor",
-  "Pneus: calibragem a frio, rodízio, sulco mínimo 1,6mm",
-  "Estepe calibrado e em bom estado",
-  "Bateria: terminais limpos + teste de carga (troque se >3 anos)",
-  "Sensor de combustível flex — verificar leitura correta"
-];
-const importantItems = [
-  "Alinhamento e balanceamento",
-  "Direção e suspensão (ruídos/folgas)",
-  "Ar-condicionado — gás e funcionamento",
-  "Faróis, lanternas, setas e luzes de freio",
-  "Palhetas do limpador de para-brisa",
-  "Água do para-brisa com aditivo",
-  "Correia dentada e correia do alternador",
-  "Triângulo, macaco, chave de roda, extintor (validade)",
-  "Kit de primeiros socorros atualizado",
-  "Galão pequeno de água destilada",
-  "Fita isolante, alicate, chave de fenda",
-  "Cabo de força (bateria)",
-  "Documento do veículo + CRLV digital",
-  "Waze/MeuAuto salvos offline",
-  "Carregador veicular USB-C e USB-A"
-];
+    // FUEL CALCULATOR
+    function calcFuel() {
+      const eth = parseFloat(document.getElementById('ethPrice').value);
+      const gas = parseFloat(document.getElementById('gasPrice').value);
+      const box = document.getElementById('fuelResult');
+      if (!eth || !gas) {
+        box.innerHTML = '<div class="result gas">Preencha os dois preços.</div>';
+        return;
+      }
+      const ratio = eth / gas;
+      const kmlEth = 9.9, kmlGas = 14.7;
+      const costEthKm = eth / kmlEth;
+      const costGasKm = gas / kmlGas;
+      if (ratio <= 0.70) {
+        box.innerHTML = `<div class="result eth">✅ Abasteça ETANOL — razão ${ratio.toFixed(2)}<br><span style="font-weight:400;font-size:12.5px;">Custo por km: R$ ${costEthKm.toFixed(3)} (etanol) vs R$ ${costGasKm.toFixed(3)} (gasolina)</span></div>`;
+      } else {
+        box.innerHTML = `<div class="result gas">⛽ Abasteça GASOLINA — razão ${ratio.toFixed(2)}<br><span style="font-weight:400;font-size:12.5px;">Custo por km: R$ ${costGasKm.toFixed(3)} (gasolina) vs R$ ${costEthKm.toFixed(3)} (etanol)</span></div>`;
+      }
+    }
 
-function buildChecklist(items, containerId, critical){
-  const container = document.getElementById(containerId);
-  items.forEach((item,i)=>{
-    const div = document.createElement('div');
-    div.className = 'check-item' + (critical ? ' critical':'');
-    div.innerHTML = `<input type="checkbox" onchange="updateProgress()"><div>${item}${critical?'<span>CRÍTICO</span>':''}</div>`;
-    container.appendChild(div);
-  });
-}
-buildChecklist(criticalItems,'criticalList',true);
-buildChecklist(importantItems,'importantList',false);
+    // CHECKLIST
+    const criticalItems = [
+      "Óleo do motor + filtro de óleo (antecipar se próximo de 10.000 km)",
+      "Filtro de ar do motor",
+      "Filtro do ar-condicionado (cabine)",
+      "Filtro de combustível",
+      "Pastilhas e discos de freio (teste o pedal; desgaste >60% exige troca)",
+      "Fluido de freio (validade 2 anos)",
+      "Líquido de arrefecimento — nível e cor",
+      "Pneus: calibragem a frio, rodízio, sulco mínimo 1,6mm",
+      "Estepe calibrado e em bom estado",
+      "Bateria: terminais limpos + teste de carga (troque se >3 anos)",
+      "Sensor de combustível flex — verificar leitura correta"
+    ];
+    const importantItems = [
+      "Alinhamento e balanceamento",
+      "Direção e suspensão (ruídos/folgas)",
+      "Ar-condicionado — gás e funcionamento",
+      "Faróis, lanternas, setas e luzes de freio",
+      "Palhetas do limpador de para-brisa",
+      "Água do para-brisa com aditivo",
+      "Correia dentada e correia do alternador",
+      "Triângulo, macaco, chave de roda, extintor (validade)",
+      "Kit de primeiros socorros atualizado",
+      "Galão pequeno de água destilada",
+      "Fita isolante, alicate, chave de fenda",
+      "Cabo de força (bateria)",
+      "Documento do veículo + CRLV digital",
+      "Waze/MeuAuto salvos offline",
+      "Carregador veicular USB-C e USB-A"
+    ];
 
-function updateProgress(){
-  const all = document.querySelectorAll('.check-item input');
-  const checked = document.querySelectorAll('.check-item input:checked');
-  const pct = Math.round((checked.length/all.length)*100);
-  document.getElementById('progressBar').style.width = pct+'%';
-}
-</script>
+    function buildChecklist(items, containerId, critical) {
+      const container = document.getElementById(containerId);
+      items.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.className = 'check-item' + (critical ? ' critical' : '');
+        div.innerHTML = `<input type="checkbox" onchange="updateProgress()"><div>${item}${critical ? '<span>CRÍTICO</span>' : ''}</div>`;
+        container.appendChild(div);
+      });
+    }
+    buildChecklist(criticalItems, 'criticalList', true);
+    buildChecklist(importantItems, 'importantList', false);
+
+    function updateProgress() {
+      const all = document.querySelectorAll('.check-item input');
+      const checked = document.querySelectorAll('.check-item input:checked');
+      const pct = Math.round((checked.length / all.length) * 100);
+      document.getElementById('progressBar').style.width = pct + '%';
+    }
+  </script>
 </body>
+
 </html>
