@@ -365,6 +365,26 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      align-items: center;
+    }
+
+    .iconlink {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-top: 8px;
+      font-size: 15px;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      background: var(--asphalt);
+      border-radius: 8px;
+      color: var(--ink);
+    }
+
+    .iconlink:active {
+      background: var(--line);
     }
 
     /* CALCULATOR */
@@ -474,7 +494,8 @@
     }
 
     .section-title {
-      font-size: 13px;
+      font-size: 18px;
+      font-weight: bold;
       color: var(--muted);
       letter-spacing: 0.12em;
       margin: 26px 0 10px;
@@ -693,6 +714,40 @@
         <button data-f="couple">Casal</button>
       </div>
 
+      <div class="section-title">São José do Rio Preto-SP</div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🏬 Decathlon <span class="tag sun">Família</span></h3>
+        <p>Lojas produtos esportivos.</p>
+        <p>⏰ 10h-21h</p>
+        <a class="maplink" href="https://maps.app.goo.gl/d4UWxkfufvdxYxZaA" target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🛍️ Calçadão de São José do Rio Preto <span class="tag sun">Família</span></h3>
+        <p>Tradicional espaço para compras diversas no centro da cidade.</p>
+        <p>⏰ 11:30h-22h</p>
+        <a class="maplink" href="https://maps.app.goo.gl/bxc4SJJreRRXSbQH7" target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🚆 Museu Ferroviário - Antiga Estação Ferroviária <span class="tag sun">Família</span></h3>
+        <p>Museu que conta a história da Ferroviária.</p>
+        <p>⏰ 08:30h-16:30h</p>
+        <a class="maplink" href="https://maps.app.goo.gl/zPiSXxbmFAoC6ciY7" target="_blank">📍 Ver no mapa</a>
+      </div>
+
+      <div class="card attraction show" data-cat="family">
+        <h3>🍓🥐 Mercado Municipal <span class="tag sun">Família</span></h3>
+        <p>Uma construção de 1944 em estilo art déco chama atenção por quem passa na Rua Antônio de Godoy, no Centro da
+          cidade. É o
+          famoso Mercadão, ou o Mercado Municipal de São José do Rio Preto, um ponto tradicional para comer pastel e
+          bater um papo
+          descontraído..</p>
+        <p>⏰ 08h-19h</p>
+        <a class="maplink" href="https://maps.app.goo.gl/zPiSXxbmFAoC6ciY7" target="_blank">📍 Ver no mapa</a>
+      </div>
+
       <div class="section-title">Olímpia-SP</div>
 
       <div class="card attraction show" data-cat="kids family">
@@ -700,12 +755,16 @@
         <p>Parque aquático de água quente + resort. <span class="price free">Grátis para hóspedes</span> — acesso
           ilimitado incluso na diária.</p>
         <p>⏰ 9h-17h, fechado seg (exceto julho/férias/feriados)</p>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Hot+Beach+Celebration+Olimpia+SP"
-          target="_blank">📍 Ver no mapa</a>
+        <div class="linkrow">
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Hot+Beach+Celebration+Olimpia+SP"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://www.hotbeach.com.br/" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/hotbeachcelebration/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
 
       <div class="card attraction show" data-cat="kids family">
-        <h3>🦖 Vale dos Dinossauros <span class="tag sun">Kids</span></h3>
+        <h3>🦖 Vale dos Dinossauros <span class="tag water">Kids</span></h3>
         <p><span class="price paid">R$ 90-100</span> inteira / R$ 50-70 criança (4-11 anos). Compre antecipado online —
           ~R$10 mais barato por pessoa.</p>
         <p>⏰ Todos os dias, 9h-19h</p>
@@ -714,14 +773,19 @@
             On-line</a>
           <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vale+dos+Dinossauros+Olimpia+SP"
             target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://www.valedinossauros.com.br/olimpia" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/valedosdinosolimpia/" target="_blank" title="Instagram">📸</a>
         </div>
       </div>
 
       <div class="card attraction show" data-cat="family">
         <h3>🛍️ Villa Mall Olímpia <span class="tag sun">Família</span></h3>
         <p>Shopping — boa opção para dia de chuva ou calor extremo.</p>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Villa+Mall+Olimpia+SP"
-          target="_blank">📍 Ver no mapa</a>
+        <div class="linkrow">
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Villa+Mall+Olimpia+SP"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://www.instagram.com/villamallolimpia/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
 
       <div class="card attraction show" data-cat="family">
@@ -733,6 +797,8 @@
             On-line</a>
           <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Museu+de+Cera+Dreamland+Olimpia+SP"
             target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://dreamland.com.br/" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/dreamlandolimpia/" target="_blank" title="Instagram">📸</a>
         </div>
       </div>
 
@@ -746,6 +812,8 @@
             On-line</a>
           <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Orionverso+Olimpia+SP"
             target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://ingresso.orionverso.com.br/" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/orionversorv/" target="_blank" title="Instagram">📸</a>
         </div>
       </div>
 
@@ -756,38 +824,56 @@
         <p><span class="price paid">R$ 20</span> ida e volta adulto / R$ 10 idoso. Crianças pequenas no colo não pagam.
         </p>
         <p>⏰ Seg-sex 9h30-17h · Sáb/dom/feriados 9h-17h30</p>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Teleferico+Serra+Negra+SP"
-          target="_blank">📍 Ver no mapa</a>
+        <div class="linkrow">
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Teleferico+Serra+Negra+SP"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://www.telefericoserranegra.com.br/" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/telefericoserranegra/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
 
-      <div class="card attraction show" data-cat="family">
-        <h3>🌸 Vitrine das Flores Park <span class="tag sun">Família</span></h3>
+      <div class="card attraction show" data-cat="couple">
+        <h3>🌸 Vitrine das Flores Park <span class="tag coffee">Opcional</span></h3>
         <p><span class="price paid">R$ 15</span> adulto. Crianças até 12 anos grátis.</p>
+        <p>Estrada de terra no Maps nem chega na entrada</p>
         <p>⏰ Qua-sex 9h-17h · Sáb 9h-18h</p>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vitrine+das+Flores+Park+Serra+Negra"
-          target="_blank">📍 Ver no mapa</a>
+        <div class="linkrow">
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vitrine+das+Flores+Park+Serra+Negra"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://www.parkvitrinedasflores.com.br/" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/parkvitrinedasflores/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
 
       <div class="card attraction show" data-cat="kids family">
         <h3>🤖 Disneylândia dos Robôs <span class="tag water">Kids</span></h3>
-        <p><span class="price paid">R$ 20</span> adulto / R$ 10 criança-idoso-estudante.</p>
+        <p><span class="price paid">R$ 40</span> adulto / R$ 20 criança-idoso-estudante.</p>
         <p>⏰ Ter-dom 10h-17h (última entrada 16h30)</p>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Disneylandia+dos+Robos+Serra+Negra"
-          target="_blank">📍 Ver no mapa</a>
+        <div class="linkrow">
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Disneylandia+dos+Robos+Serra+Negra"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://disneylandiadosrobos.com.br/" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/disneilandiadosrobos/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
 
       <div class="card attraction show" data-cat="family">
         <h3>🌿 Bioparque Serra Negra <span class="tag sun">Família</span></h3>
-        <p><span class="price paid">R$ 40</span> trilhas livres. Visita monitorada com biólogo: R$ 80 (agendar via
-          WhatsApp).</p>
-        <p>⏰ Sáb, dom, feriados 10h-17h</p>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bioparque+Serra+Negra+SP"
-          target="_blank">📍 Ver no mapa</a>
+        <p><span class="price paid">R$ 60</span> adulto / R$ 30 criança-idoso-estudante, trilhas livres. Visita
+          monitorada com biólogo: R$ 80 (agendar via WhatsApp).</p>
+        <p>⏰ Sáb, dom, feriados 9h-16h</p>
+        <div class="linkrow">
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Bioparque+Serra+Negra+SP"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://bioparque.eco.br/" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/bioparqueserranegra/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
 
       <div class="card attraction show" data-cat="family">
         <h3>🌅 Mirante Alto da Serra <span class="tag sun">Família</span></h3>
         <p><span class="price free">Grátis</span>. Melhor horário: pôr do sol.</p>
+        <p>⏰ 10h-19h</p>
         <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Mirante+Alto+da+Serra+Serra+Negra+SP"
           target="_blank">📍 Ver no mapa</a>
       </div>
@@ -809,38 +895,52 @@
       <div class="card attraction show" data-cat="couple">
         <h3>🍷 Vinícola Silotto <span class="tag coffee">Casal</span></h3>
         <p>Degustação de vinhos e cachaças artesanais. Programar sem as crianças ou com atividade paralela.</p>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vinicola+Silotto+Serra+Negra+SP"
-          target="_blank">📍 Ver no mapa</a>
-      </div>
-
-      <div class="card attraction show" data-cat="couple">
-        <h3>☕ Museu do Café + Alambique <span class="tag coffee">Casal</span></h3>
-        <p>Sítio São Geraldo — Rota do Café. Passeio contemplativo, menor apelo infantil.</p>
-        <a class="maplink"
-          href="https://www.google.com/maps/search/?api=1&query=Sitio+Sao+Geraldo+Rota+do+Cafe+Serra+Negra"
-          target="_blank">📍 Ver no mapa</a>
+        <p>⏰ Seg à sáb 9h-18h, dom 9h-14h </p>
+        <div class="linkrow">
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vinicola+Silotto+Serra+Negra+SP"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://www.familiasilotto.com.br/" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/familiasilotto/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
 
       <div class="card attraction show" data-cat="couple">
         <h3>☕ Café Nonno Marchi <span class="tag coffee">Casal</span></h3>
         <p>Ambiente ideal para um momento a dois.</p>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Nonno+Marchi+Serra+Negra+SP"
-          target="_blank">📍 Ver no mapa</a>
+        <p>Visitação guiada. Mais do que uma simples visita, oferecemos uma verdadeira imersão no universo do café.
+          Durante o percurso pela
+          lavoura e
+          pelas instalações da propriedade, você acompanha de perto cada etapa do processo, do cultivo à torra,
+          entendendo como
+          cada detalhe influencia na qualidade da bebida.</p>
+        <p>⏰ Qua à dom 9h-17h</p>
+        <div class="linkrow">
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Nonno+Marchi+Serra+Negra+SP"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://cafenonnomarchi.com.br/" target="_blank" title="Site">🌐</a>
+          <a class="iconlink" href="https://www.instagram.com/cafe.nonnomarchi/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
 
       <div class="section-title">Restaurantes</div>
       <div class="card attraction show" data-cat="family couple">
         <h3>🍗 Olenheiro Restaurante</h3>
         <p>Rod. Eng. Constâncio Cintra, 2957-2911 — Jardim do Lago</p>
-        <a class="maplink"
-          href="https://www.google.com/maps/search/?api=1&query=Rod.+Eng.+Constancio+Cintra+2957+Serra+Negra+SP"
-          target="_blank">📍 Ver no mapa</a>
+        <div class="linkrow">
+          <a class="maplink"
+            href="https://www.google.com/maps/search/?api=1&query=Rod.+Eng.+Constancio+Cintra+2957+Serra+Negra+SP"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://www.instagram.com/olenheirorestaurante/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
       <div class="card attraction show" data-cat="family couple">
         <h3>🥩 Serranomeat</h3>
         <p>Jardim Parque das Palmeiras</p>
-        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Serranomeat+Serra+Negra+SP"
-          target="_blank">📍 Ver no mapa</a>
+        <div class="linkrow">
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Serranomeat+Serra+Negra+SP"
+            target="_blank">📍 Ver no mapa</a>
+          <a class="iconlink" href="https://www.instagram.com/serranomeat/" target="_blank" title="Instagram">📸</a>
+        </div>
       </div>
       <div class="card attraction show" data-cat="couple">
         <h3>🍝 Lá Terrazza</h3>
@@ -850,6 +950,14 @@
       </div>
 
       <div class="section-title">Cidades-satélite (1 por dia)</div>
+      <div class="card attraction show" data-cat="family">
+        <h3>Águas de Lindóia <span class="tag sun">Lojinhas</span></h3>
+        <p>Principal centro de compras de Águas de Lindóia - SP. Conhecido também como Shopping Monte Real, somos em 36
+          lojas
+          diversas.</p>
+        <a class="maplink" href="https://maps.app.goo.gl/MtwkYguYLABZ2hrY9" target="_blank">📍 Ver
+          no mapa</a>
+      </div>
       <div class="card attraction show" data-cat="family">
         <h3>Monte Sião <span class="tag sun">Malharias</span></h3>
         <p>Compras de roupas de inverno direto da fábrica.</p>
