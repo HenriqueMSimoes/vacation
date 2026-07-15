@@ -1429,6 +1429,9 @@
         <div class="section-title">💊 Farmacinha e Saúde</div>
         <div id="farmaciaList"></div>
 
+        <div class="section-title">🔌 Kit Eletrônicos</div>
+        <div id="eletronicosList"></div>
+
         <div
           style="margin-top:16px;padding:14px 16px;border-radius:10px;background:rgba(255,210,63,0.1);border:1px solid var(--sun);font-size:13px;line-height:1.5;">
           💡 <b>Dica de organização:</b> use sacos organizadores (packing cubes) de cores diferentes para cada pessoa
@@ -1643,6 +1646,14 @@
       "Digestivo (Epocler/Eno)",
       "Termômetro digital"
     ];
+    const eletronicosItems = [
+      "Máquina fotográfica",
+      "Cartão de memória + bateria extra da câmera",
+      "Lanterna",
+      "Carregador da lanterna (ou pilhas extras)",
+      "Carregadores de celular (um por pessoa, evita disputa)",
+      "Power bank carregado"
+    ];
 
     function buildChecklist(items, containerId, critical, scopeId, barId) {
       const container = document.getElementById(containerId);
@@ -1660,6 +1671,7 @@
     buildChecklist(crianca5Items, 'crianca5List', false, 'malaScope', 'progressBarMala');
     buildChecklist(higieneItems, 'higieneList', false, 'malaScope', 'progressBarMala');
     buildChecklist(farmaciaItems, 'farmaciaList', false, 'malaScope', 'progressBarMala');
+    buildChecklist(eletronicosItems, 'eletronicosList', false, 'malaScope', 'progressBarMala');
 
     function updateProgress(scopeId, barId) {
       const scope = document.getElementById(scopeId);
